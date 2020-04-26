@@ -7,10 +7,10 @@ const device = {
 export default StyleSheet.create({
   container: {
     paddingTop: device.height*0.035,
-    backgroundColor: '#999999'   
+    backgroundColor: '#0D47A1'   
   },
   scrollView: {
-    height: device.height*0.8743,
+    height: device.height*0.8,
     marginBottom: 10,
   },
   suggestArea: {

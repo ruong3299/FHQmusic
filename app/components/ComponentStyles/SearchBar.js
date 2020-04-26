@@ -10,11 +10,11 @@ export default StyleSheet.create({
     alignItems: "center",
     height: device.height*0.09,
     width: device.width,
-    backgroundColor: 'green'
+    backgroundColor: '#1976D2'
   }, 
   searchBarContainer: {
     flexDirection: 'row',
-    borderColor: 'green',
+    borderColor: '#1976D2',
     borderWidth: 1,
     borderRadius: device.height*0.06*0.35,
     height: device.height*0.06,
