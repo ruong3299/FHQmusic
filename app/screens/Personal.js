@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, Text, StatusBar, TouchableOpacity, Platform } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { ListItem } from 'react-native-elements'
 import styles from '../styles/Personal';
@@ -9,35 +9,39 @@ const list = [
   {
     title: 'Danh sách bài hát',
     icon: 'headset',
+    type: 'songs',
   },
   {
     title: 'Danh sách yêu thích',
     icon: 'favorite',
+    type: 'favorite',
   },
   {
     title: 'Lịch sử nghe nhạc',
     icon: 'history',
+    type: 'history',
   },
 ]
 
 export default class Personal extends React.Component {
   render(){
+    const {navigate} = this.props.navigation;
     return(
-      <View style={styles.container}>
-        <StatusBar barStyle="default"/>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="default" translucent/>
         <View>
           <SearchBar/>
         </View>
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Cá nhân</Text>
         </View>
-        <View>
+        <View style={{backgroundColor: 'white'}}>
         {list.map((item, i) => {
           return (
             <Animatable.View key={i} animation="fadeInDown" delay={i*100} duration={500}>
               <TouchableOpacity 
-                onPress={()=> console.log(item.title)}
-                activeOpacity={0.5}
+                onPress={()=> navigate('SongList', {title: item.title, type: item.type})}
+                activeOpacity={0.3}
               >
                 <ListItem
                   key={i}
@@ -52,7 +56,7 @@ export default class Personal extends React.Component {
         })
       }
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }
