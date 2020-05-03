@@ -7,7 +7,6 @@ import Personal from './app/screens/Personal';
 import SongList from './app/screens/SongList';
 import { MenuProvider } from 'react-native-popup-menu';
 import { Icon } from 'react-native-elements';
-import SongPlayer from './app/screens/SongPlayer';
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +45,6 @@ function App() {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="TabNavigator" component={TabNavigator} />
           <Stack.Screen name="SongList" component={SongList} />
-          <Stack.Screen name="SongPlayer" component={SongPlayer} />
         </Stack.Navigator>
       </NavigationContainer>
     </MenuProvider>
